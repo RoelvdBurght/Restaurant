@@ -1,0 +1,15 @@
+staurantpackage e.roel.restaurant;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+import e.roel.restaurant.R;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+}
