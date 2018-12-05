@@ -12,11 +12,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+// Custom adapter for the categorys
 public class CategoryAdapter extends ArrayAdapter<String> {
 
-    ArrayList<String> categoryNames;
-    //Context mcontext;
     String tag = "CategoryAdapter";
+    private ArrayList<String> categoryNames;
     private int height;
 
     public CategoryAdapter(Context context, int resource, ArrayList<String> cNames, int appHeight) {
@@ -31,15 +31,18 @@ public class CategoryAdapter extends ArrayAdapter<String> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.category_item, parent, false);
         }
 
-
+        // Set the category text
         TextView catName = convertView.findViewById(R.id.category);
         catName.setText(categoryNames.get(position));
+
+
+        // Because we know there are only 2 categorys we will set their height to be half the screen
         ViewGroup.LayoutParams layoutparams = convertView.getLayoutParams();
-
-
-        layoutparams.height = height/2;
+        int catsOnScreen = 2;
+        layoutparams.height = height/catsOnScreen;
         convertView.setLayoutParams(layoutparams);
 
+        // Set the color of the list items
         convertView.setBackgroundColor(Color.parseColor("#FFFBE6"));
         return convertView;
     }

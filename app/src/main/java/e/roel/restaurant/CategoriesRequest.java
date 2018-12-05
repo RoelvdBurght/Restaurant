@@ -25,21 +25,24 @@ public class CategoriesRequest implements Response.Listener<JSONObject>, Respons
     private Callback caller;
     private static final String URL = "https://resto.mprog.nl/categories";
 
+    // Constructor saving the context
     public CategoriesRequest(Context c) {
         this.context = c;
     }
 
     public interface Callback {
-
         void gotCategories(ArrayList<String> categories);
         void gotCategoriesError(String message);
     }
 
+    // Sends the error back to the calling activity
     @Override
     public void onErrorResponse(VolleyError error) {
-
+        caller.gotCategoriesError(error.getMessage());
     }
 
+    // On response, parses the categorys from the json object and returs these to the calling
+    // activity. If the JSON object is empty it returns this to the error handling method.
     @Override
     public void onResponse(JSONObject response) {
         ArrayList<String> categories = new ArrayList<String>();
@@ -56,16 +59,12 @@ public class CategoriesRequest implements Response.Listener<JSONObject>, Respons
             caller.gotCategories(categories);
         }
         catch(Exception e) {
-
-            Log.d(tag, "except");
-            Log.d(tag, e.getMessage());
-
             caller.gotCategoriesError(e.getMessage());
         }
     }
 
+    // Calls the server to give the categorys, adds a request to the queue
     void getCategories(Callback activity) {
-        Log.d(tag, "getCategories");
         caller = activity;
         RequestQueue queue = Volley.newRequestQueue(context);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(URL, null, this,this);

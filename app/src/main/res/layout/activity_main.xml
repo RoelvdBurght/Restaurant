@@ -7,15 +7,15 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/headerMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFBE6"
         android:fontFamily="@font/montserrat"
         android:text="Our courses"
         android:textAlignment="center"
         android:textColor="#356859"
         android:textSize="50dp"
-        android:background="#FFFBE6"
         android:textStyle="bold" />
 
     <ListView xmlns:android="http://schemas.android.com/apk/res/android"

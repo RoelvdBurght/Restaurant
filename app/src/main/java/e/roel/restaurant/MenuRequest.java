@@ -33,11 +33,14 @@ public class MenuRequest implements Response.Listener<JSONObject>, Response.Erro
     }
 
 
+    // Send error to the user if loading from server fails
     @Override
     public void onErrorResponse(VolleyError error) {
-
+        caller.gotMenuError(error.getMessage());
     }
 
+    // When the server responds, parse the JSON object and transfer the data into MenuItem objects
+    // If errors occur while parsing send a message to the user
     @Override
     public void onResponse(JSONObject response) {
         JSONArray jsonMenu;
@@ -61,12 +64,12 @@ public class MenuRequest implements Response.Listener<JSONObject>, Response.Erro
             caller.gotMenu(menu);
         }
         catch(Exception e) {
-
-            Log.d(tag, e.getMessage());
             caller.gotMenuError(e.getMessage());
         }
     }
 
+    // Get the menu items of this category
+    // Makes a call to the server
     void getMenu(Callback activity, String category) {
         caller = activity;
         String url = urlBase + category;
@@ -74,4 +77,5 @@ public class MenuRequest implements Response.Listener<JSONObject>, Response.Erro
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(url, null, this,this);
         queue.add(jsonObjectRequest);
     }
+
 }
