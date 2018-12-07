@@ -69,7 +69,7 @@ public class selectedMenuItem extends AppCompatActivity {
                 .into(view, new Callback() {
                     @Override
                     public void onSuccess() {
-                        Toast.makeText(context, "hi", Toast.LENGTH_LONG).show();
+
                     }
 
                     @Override
