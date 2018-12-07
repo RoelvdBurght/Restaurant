@@ -1,5 +1,4 @@
 
-![Homescreen](pix1.png)
-![Inpuscreen](pix2.png)
-![Lookscreen](pix4.png)
-![Contextmenu](pix5.png)
+![](pix1.png)
+![](pix4.png)
+![](pix5.png)    
