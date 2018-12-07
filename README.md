@@ -8,11 +8,11 @@ zijn waar je uit kan kiezen zullen die het hele scherm vullen (bij appetizers ka
 als er meer dan 2 items zijn zullen er drie te zien zijn die het scherm vullen.
 
 
-![](pix1.png)
-![](nex1.png)
-![](pix2.png)
-![](nex2.png)
-![](pix4.png)
-![](nex4.png)
-![](pix5.png)    
-![](nex5.png)
+![](doc/pix1.png)
+![](doc/nex1.png)
+![](doc/pix2.png)
+![](doc/nex2.png)
+![](doc/pix4.png)
+![](doc/nex4.png)
+![](doc/pix5.png)    
+![](doc/nex5.png)
