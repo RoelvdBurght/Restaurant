@@ -2,53 +2,78 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLinLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFBE6"
     android:orientation="vertical"
-    android:weightSum="100"
+    android:weightSum="150"
     tools:context=".selectedMenuItem">
 
 
     <ImageView
         android:id="@+id/image"
-        android:layout_weight="50"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:layout_weight="20"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/name"
-        android:layout_weight="70"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_weight="20"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FD5523"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
 
     <TextView
         android:id="@+id/content"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_weight="40"
+        android:fontFamily="@font/montserrat"
+        android:text="TextView"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textColor="#37966F"
+        android:background="@drawable/rounded_corner"
+        android:textSize="18dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="80">
+        android:layout_height="wrap_content"
+        android:layout_weight="70"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:fontFamily="@font/montserrat"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#356859"
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView" />
+            android:fontFamily="@font/montserrat"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#356859"
+            android:textSize="12dp" />
     </LinearLayout>
 
 </LinearLayout>
